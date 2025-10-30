@@ -1,0 +1,20 @@
+- we want to start at the end of str 
+
+- we want to trace back, while tracking with counter until we reach an empty char aka a space
+
+- we return counter
+
+we index the last char via str[-1] init count of 0 
+
+
+
+index = -1
+pos = str[index]
+count = 0 
+empty = " "
+while pos != empty:
+
+    count++ 
+    index-- 
+
+return count 
