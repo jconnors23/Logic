@@ -1,0 +1,8 @@
+left to right on prefix checking
+
+right to left on len of prefix from first word in arr 
+
+
+if len of arr pos 1 > curr pos, move point to the left and continue 
+
+when len even, 
