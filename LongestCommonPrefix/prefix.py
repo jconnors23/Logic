@@ -2,20 +2,20 @@ class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
         first = strs[0]
         prefix = ""
-        connected = True
         for char in first:
             for word in strs:
-                print(f"word: {word}, char: {char}")
-                if char not in word:
-                    print(f"reached, char: {char}")
-                    connected = False
-                    break #conditionality needs adjustment, need to increment to next word
-                else: 
-                    if not connected:
-                        break
-            prefix += char
+                potential = prefix + char
+                if char not in word or potential not in word:
+                    return prefix 
+                for i in range(len(potential)):
+                    if potential[i] != word[i]:
+                        return prefix
+            prefix = potential
         return prefix
 
 if __name__ == "__main__":
-    example = ["flower","flow","flight"]
-    print(Solution().longestCommonPrefix(example))
+    one = ["flower","flow","flight"]
+    two = ["aa", "ab"]
+    three = ["c","acc","ccc"]
+    four = ["abca","aba","aaab"]
+    print(Solution().longestCommonPrefix(four))
