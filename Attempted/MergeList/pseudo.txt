@@ -1,0 +1,15 @@
+start at head of list 2, 
+
+
+find where first val goes within list 1, then move pointer to next val in list 2 
+
+keep track of prev node seen in 1 - pick up where you left off - prev becomes val of inserted node 
+
+
+for node in list 
+
+if val of node at 2 is >= val 1 node, insert node into list
+
+    next iteration, if val of node is >= val of prev seen, same operation, update previous 
+
+    
