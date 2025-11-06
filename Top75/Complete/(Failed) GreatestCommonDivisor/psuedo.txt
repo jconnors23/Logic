@@ -1,0 +1,24 @@
+partition of string that is repeated one or more times in the other
+
+
+it cant be just one instance of the partition, 
+must be at least two instances that are also connected and vice versa
+
+
+
+check from whole word in str 2 
+
+if w/in str 1, check for repeat right after, 
+
+    if no repeat, go next
+
+move pointer left, check len(str-1) 
+
+
+if at end and 1 char is repeated, check for repeat in the other str 
+
+return longest 
+
+
+can slice after occurence and check pos right after for match
+
