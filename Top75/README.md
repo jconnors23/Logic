@@ -1,7 +1,5 @@
 Problems From: https://leetcode.com/studyplan/leetcode-75/
 
-Seen: Attempted problems
-
 Progress: 
 
 Array / String: 
