@@ -8,4 +8,4 @@ Merge Strings Alternatively: Attempted, Grade: Pass
 
 Greatest Commoon Divisor of Strings: Attempted, Grade: Fail
 
-Greatest Number of Candies: Pending, Grade: Pending
+Greatest Number of Candies: Pending, Grade: Pending Attempt
