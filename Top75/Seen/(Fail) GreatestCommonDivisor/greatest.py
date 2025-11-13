@@ -9,11 +9,10 @@ class Solution:
             portion = len(str2)-i
             partial = str2[0:portion]
             alive = True
-            while alive:
-                for i in range(len(str1)):
-                    if str[i] == 
-            if partial in str1:
-
+            for i in range(len(str1)):
+                if str1[i] == partial[i]:
+                    alive = False
+            # if partial in str1:
 
         return longest
 
