@@ -1,14 +1,14 @@
-class Solution():
-    def removeDuplicates(nums):
-        count=0
-        for i in range(len(nums)-1):
-            val = nums[i]
-            for j in range(len(nums)-1):
-                if (nums[j] != nums[i]):
-                    count+=1
-                    nums[count] = nums[j]
+# class Solution():
+#     def removeDuplicates(nums):
+#         count=0
+#         for i in range(len(nums)-1):
+#             val = nums[i]
+#             for j in range(len(nums)-1):
+#                 if (nums[j] != nums[i]):
+#                     count+=1
+#                     nums[count] = nums[j]
                 
-print(Solution.removeDuplicates([0,0,1,1,2,2,3,3,4]))
+# print(Solution.removeDuplicates([0,0,1,1,2,2,3,3,4]))
 
 
 
