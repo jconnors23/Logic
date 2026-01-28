@@ -2,3 +2,21 @@ we know that we need to find occurence of target minus current val in i, how do 
 
 
 i.e. how do we find does diff exist in nums?
+
+
+use a dictionary, append to the dictionary the current value in nums each time we do NOT find a diff in nums.
+
+check if difference exists in dictionary during each iteration, once the target difference is found, return the value of the nums[i] and the according difference
+
+this requires only one iteration through nums
+
+in the dict, the keys are the values in nums, and the values are their actual indexes
+
+diff = target - nums[i]
+            if diff in lookup:
+                return [lookup[diff], i]
+            else:
+                lookup[nums[i]] = i
+
+
+https://leetcode.com/problems/two-sum/submissions/1899280122/?envType=problem-list-v2&envId=pkr5reeg
