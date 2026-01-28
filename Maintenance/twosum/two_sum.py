@@ -1,12 +1,14 @@
 class Solution:
     def twoSum(self, nums, target):
+        lookup = {}
         for i in range(len(nums)):
-            temp = nums[i]
-            for j in range(len(nums)):
-                if temp + nums[j] == target and i != j:
-                    indices = [i, j]
-                    return indices
+            diff = target - nums[i]
+            if diff in lookup:
+                return [lookup[diff], i]
+            else:
+                lookup[nums[i]] = i
         pass
+
 
 if __name__ == "__main__":
     sol = Solution()

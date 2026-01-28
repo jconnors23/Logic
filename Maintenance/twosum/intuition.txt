@@ -1,0 +1,4 @@
+we know that we need to find occurence of target minus current val in i, how do we find it without scanning the whole arr?
+
+
+i.e. how do we find does diff exist in nums?
