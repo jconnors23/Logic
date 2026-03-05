@@ -8,15 +8,16 @@ alwaysApply: true
 
 ## Learn command
 - When the user says **"learn"** (and only that word—no other text), immediately begin the teaching-structure process in the current directory.
-- Treat it as a full restart of the maintenance flow: review the problem files in the current directory and start the Socratic loop from step 1.
+- Treat it as a full restart: review problem files (pseudo, intuition, brute_force) and start the Socratic loop from Phase 1. Time allocations and full flow (120–135 min, across one week) are in `references/recommended-maintenance-process.md`.
 
 ## Teaching structure (process)
-1. Review `intuition.md` in the problem directory.
-2. Review the brute force solution (e.g. `brute_force.py`) in the problem directory.
-3. Find logic flaws, inconsistencies, and areas for growth; perform internal synthesis.
-4. Engage in Socratic teaching to walk the learner through the core essence of what the problem teaches and the synthesis.
-5. After the learner has progressed and reached brute-force mastery (correct file, test cases pass), engage in Socratic teaching to lead them toward how to begin thinking about the golden solution.
-6. When the learner begins the golden solution and returns to chat, repeat steps 1–4: review `intuition_golden.md` and `golden.py` with the same Socratic process.
+
+Follow the phased structure in `references/recommended-maintenance-process.md` (Phase 1: problem review + brute force + brute-force review; Phase 2: golden Socratic → golden impl → final review and intuition_golden).
+
+1. **Phase 1 — Problem and brute force:** Review `pseudo.md`/`psuedo.txt` (problem, constraints), then `intuition.md` and `brute_force.py`. Find logic flaws, inconsistencies, and areas for growth; perform internal synthesis.
+2. Engage in Socratic teaching to walk the learner through the core essence and the synthesis. Do not proceed until brute-force mastery (correct logic, test cases pass).
+3. **Phase 2 — Golden:** Socratic teaching toward the golden pattern (hint structure only, no full code). When the learner implements and returns, review `intuition_golden.md` (if present) and `golden.py` with the same Socratic process.
+4. **Final review:** After critic of `golden.py`, fill out or refine `intuition_golden.md` with the thought process (why the pattern, invariants, one trace, complexity); learner reviews for alignment.
 
 ## Core behavior
 - Be **hint-first** and **Socratic** by default.

@@ -2,6 +2,8 @@
 
 **Goal:** Weekly "gym trips" — supplement daily software engineering with one core LeetCode problem where you truly learn the *essence*: why the problem exists, the brute-force logic, and the golden solution pattern.
 
+**Timing: flexible estimates.** The numbers below are like story points: planning and pacing guides, not stopwatches. **Ideally** the full process doesn’t exceed **about 2 hours** for one problem (easy/medium). Learning rates differ; going over when it’s productive is fine. The point is a sustainable rhythm, not hitting a fixed cap.
+
 ---
 
 ## Problem Directory Structure
@@ -10,83 +12,65 @@ Each problem lives in its own directory (e.g. `twosum/`, `validparen/`) with the
 
 | File | Purpose |
 |------|---------|
+| `intuition.md` (or `intuition.txt`) | Notes on the core logic and why the brute-force solution works. |
+| `pseudo.md` or `psuedo.txt` | Problem prompt, constraints, algorithm notes, pattern name, and 2–3 line "gotcha" logic. |
 | `brute_force.py` | Your initial attempt; the working brute-force solution. |
-| `{problem_snake_case}.py` | The golden/optimal solution. E.g. `two_sum.py` for Two Sum, `valid_paren.py` for Valid Parentheses. |
-| `intuition.txt` | Notes on the core logic and why the solution works. |
-| `psuedo.txt` | Problem prompt, algorithm notes, pattern name, and 2–3 line "gotcha" logic. |
+| `golden.py` or `{problem_snake_case}.py` | The golden/optimal solution (e.g. `golden.py`, `two_sum.py`). |
+| `intuition_golden.md` (or `intuition_golden.txt`) | Filled out in Phase 4: thought process behind the golden solution (why the pattern, key invariants, trace). Used for learning and future reference. |
 
 ---
 
-## The Reality Check: How Long Should 1 Core Problem Take?
+## Learning Structure and Time Allocation
 
-The original 60–75 minute "Optimized Maintenance" frame was aspirational. In practice, a **thoughtful** session that includes:
+Sessions can be split across the week. **Total: ~2 hours** (120–135 min typical; flexible).
 
-- Brute-force attempt (with some struggle)
-- Socratic review and critique
-- Golden-solution reproduction and understanding
-- Artifact documentation
+### Phase 1 — Brute force and mastery (~1 hour)
 
-…will often take **90–120 minutes** for an easy/medium problem when done well.
+| Step | Time | Action |
+|------|------|--------|
+| **1. Problem review and understanding** | 15 min | Read the problem, constraints, and examples. Review `pseudo.md` / `psuedo.txt` (prompt, pattern name if present, gotchas). Solidify understanding before coding. |
+| **2. Brute force implementation** | ~20 min | Implement in `brute_force.py`. Get a working solution. If stuck after ~20 min, move to review — don’t spin. |
+| **3. Brute force review with Cursor** | 30 min | Socratic teaching: critique logic, find flaws, trace examples. Adjust `brute_force.py` until correct and tests pass. Do not proceed until brute-force mastery. |
 
-That’s **expected**. The idea isn’t to race; it’s to create a sustainable weekly rhythm where each session builds durable understanding.
-
----
-
-## Recommended Weekly Process
-
-### Time Allocation (90–120 Minutes Total)
-
-| Phase | Time | Action |
-|-------|------|--------|
-| **1. The Sprint** | 20–25 min | Attempt the problem in `brute_force.py`. Get brute-force if you can. **Hard cap: 25 min.** If stuck, move on—don’t spin. |
-| **2. The Audit** | 20–25 min | Ask Cursor: *"Critique my logic. What is the O(n) pattern here?"* Socratic dialogue. Focus on *why* brute force is slow and what the optimal pattern addresses. |
-| **3. The Golden Solve** | 20–25 min | Create `{problem_snake_case}.py` (e.g. `two_sum.py`). Rewrite using the optimal pattern. See *"Making the Golden Solve Less Scary"* below. |
-| **4. The Artifact** | 10–15 min | Update `psuedo.txt` with the pattern name (e.g., "Hash Map Lookup") and the 2–3 line "gotcha" logic. |
+**Phase 1 total: ~60 min (15 + 20 + 30).**
 
 ---
 
-## Making the Golden Solve Less Scary
+### Phase 2 — Golden: from hints to implementation (~40–45 min)
 
-The Golden phase often feels like a threat—a blank screen with no "excuse" left. Use these **safety nets**:
+| Step | Time | Action |
+|------|------|--------|
+| **4. Golden Socratic teaching** | 15–20 min | With Cursor: Socratic dialogue toward the golden pattern. Build a **hint structure** (idea → invariant → structure) ready for implementation. No full code yet — hints and mental checklist only. |
+| **5. Golden implementation** | 25 min | Implement in `golden.py` (or `{problem_snake_case}.py`) using the hint structure. Open-book from `intuition_golden.md` if it already exists from a prior run; otherwise use notes from the Socratic session. |
+| **6. Final review and critic** | 15–20 min | Cursor critiques `golden.py`. Then Cursor **fills out `intuition_golden.md`** (thought process, why the pattern, key invariants, one trace, complexity). Learner reviews it for alignment and future reference. |
 
-1. **Open Book Policy** — Keep optimal pseudocode visible on half your screen while you type. Aim to understand *flow*, not memorize syntax.
+---
 
-2. **Lego Strategy** — Write in chunks: setup (2–3 lines) → main loop → return. Don’t try to hold the whole thing in your head.
+### Phase 3 — Closure
 
-3. **Reproduce, Don’t Invent** — You’re tracing a blueprint. Senior engineers learn patterns; they don’t rediscover Dijkstra every time.
+| Step | Action |
+|------|--------|
+| **7. Commit and mark complete** | Commit all problem files (pseudo, intuition, brute_force, golden, intuition_golden). Push. Mark the problem complete (e.g. checklist or log). |
 
-4. **Kiro Bridge** — If you freeze, ask for "just the first two lines" to get momentum. Then continue.
-
-5. **Muscle Memory** — Typing the optimal solution encodes it differently than reading. Even with pseudocode open, the act of typing matters.
+**End-to-end: ideally ≤2 hours total**, spread across the week if you like. Estimates are flexible; depth of understanding matters more than hitting the clock.
 
 ---
 
 ## Cadence: The Weekly Gym
 
 - **Frequency:** 1 core problem per week.
-- **When:** Block a 90–120 minute slot (e.g., Sunday morning, Saturday afternoon).
-- **Mindset:** This is a deliberate practice block, not a speed run. Daily SE work is the field; this is the gym.
+- **When:** Spread Phase 1–3 across the week (e.g. Phase 1 one day, Phase 2–3 another, or all in one 2-hour block).
+- **Mindset:** Deliberate practice. Daily SE work is the field; this is the gym.
 
 ---
 
-## Compact Variant (75–80 Minutes)
+## Making the Golden Solve Less Scary
 
-Use when time is tight:
-
-| Phase | Time | Adjustment |
-|-------|------|------------|
-| Sprint | 20 min | Strict cap. Move on earlier if stuck. |
-| Audit | 15–20 min | Focus on one core inefficiency and the pattern name. Fewer Socratic rounds. |
-| Golden | 20 min | Open Book from the start. Less invention, more reproduction. |
-| Artifact | 10 min | Update `psuedo.txt` with pattern name + 1–2 line gotcha only. |
-
----
-
-## Why Both Brute Force and Golden?
-
-- **Brute force** builds the habit of "get something working" and surfaces the inefficiency you’ll later optimize.
-- **Golden** encodes the canonical pattern (Two-Pointer, Sliding Window, etc.) into your toolkit.
-- Together, they give you the *essence*: why the problem exists and how the optimal pattern solves it.
+1. **Open Book Policy** — Use `intuition_golden.md` or Socratic notes on half your screen while you type. Aim to understand *flow*, not memorize syntax.
+2. **Lego Strategy** — Write in chunks: setup → main loop → return.
+3. **Reproduce, Don’t Invent** — You’re tracing a blueprint. Senior engineers learn patterns; they don’t rediscover them every time.
+4. **Kiro Bridge** — If you freeze, ask for "just the first two lines" to get momentum.
+5. **Muscle Memory** — Typing the solution encodes it differently than reading.
 
 ---
 
@@ -94,9 +78,33 @@ Use when time is tight:
 
 This process works with the hint-first Socratic style in `maintenance-teaching-style.mdc`:
 
-- Use **`learn`** in a problem directory to start the flow. Cursor reviews `intuition.txt`, `brute_force.py`, then `{problem_snake_case}.py` (e.g. `two_sum.py`).
-- The Audit phase is where Socratic dialogue happens; let it run until you reach mastery before moving to Golden.
-- The Golden phase is reproduction in `{problem_snake_case}.py`; Cursor can still nudge with hints if you ask.
+- Use **`learn`** in a problem directory to start the flow. Cursor reviews `intuition.md`, `brute_force.py`, then (after Phase 2) `intuition_golden.md` and `golden.py`.
+- Phase 1 step 3 is where brute-force Socratic dialogue runs until mastery.
+- Phase 2 step 4 is Socratic teaching toward the golden hint structure (no full solution).
+- Phase 2 step 6: Cursor fills out `intuition_golden.md` after the final critic so the learner has a durable artifact.
+
+---
+
+## Critique of the Timing Methodology
+
+**Strengths**
+
+- **Phase 1 cap (1 hour)** keeps brute force from ballooning and forces “good enough to review” instead of perfectionism.
+- **Explicit 30 min for brute-force review** signals that understanding and correction are first-class, not a quick glance.
+- **Separating “golden Socratic” (15–20 min) from “golden impl” (25 min)** avoids dumping code: the learner builds a mental model before typing.
+- **120–135 min total** is realistic for one problem with review, implementation, and artifact; it discourages rushing.
+- **Spread across one week** reduces pressure to do everything in one sitting and supports spaced repetition (e.g. Phase 1 one day, golden the next).
+
+**Risks and mitigations**
+
+| Risk | Mitigation |
+|------|------------|
+| Phase 1 runs over (e.g. brute force takes 35 min) | After ~20–25 min on impl, move to review even if tests don’t all pass. Review can fix logic with Socratic guidance. |
+| “30 min review” feels vague | Treat it as “Socratic until mastery”: trace 2–3 inputs, fix one flaw at a time, re-run tests. Stop when correct and learner can explain. |
+| Golden Socratic (15–20 min) may be too short for hard problems | Use longer for medium/hard; estimates scale with difficulty. |
+| Filling `intuition_golden.md` in 15–20 min with critic | Do critic first, then Cursor drafts `intuition_golden.md`; learner reviews and tweaks. |
+
+**Summary:** The timing is **coherent and teach-friendly**. Treat it as **flexible estimates** (like story points): the ~2-hour target is reasonable for actually learning one problem’s pattern, but learning rates differ — the foolish part is rigid caps; the useful part is a session budget so you don’t drift indefinitely and Socratic phases get enough time.
 
 ---
 
@@ -104,6 +112,6 @@ This process works with the hint-first Socratic style in `maintenance-teaching-s
 
 | Question | Answer |
 |----------|--------|
-| How long should 1 core LeetCode question take? | **90–120 minutes** for a full session (brute + audit + golden + artifact). |
-| Can it be adjusted? | Yes — cap Sprint at 25 min, use Compact variant when needed, split across two days if desired. |
-| What’s the goal? | Weekly gym trips: deep, sustainable learning of one problem’s essence, not volume. |
+| How long for one core problem? | **Ideally ≤2 hours** (typical 120–135 min). Phase times are **estimates**; flexible. |
+| Can it be split? | Yes — across one week. Going over when it’s productive is fine; learning rates differ. |
+| What’s the goal? | Weekly gym: deep, sustainable learning of one problem’s essence (brute + golden + artifact), not volume. |
