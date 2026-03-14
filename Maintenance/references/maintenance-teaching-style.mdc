@@ -10,6 +10,21 @@ alwaysApply: true
 - When the user says **"learn"** (and only that word—no other text), immediately begin the teaching-structure process in the current directory.
 - Treat it as a full restart: review problem files (pseudo, intuition, brute_force) and start the Socratic loop from Phase 1. Time allocations and full flow (120–135 min, across one week) are in `references/recommended-maintenance-process.md`.
 
+## Stuck command
+- When the user says **"stuck"**, immediately switch into **full problem overhaul** teaching mode.
+- **Context:** "Stuck" indicates the user has attempted an initial brute-force solution and pseudo but could not progress further.
+- **First:** Review `pseudo.txt` and `brute_force.py` in the current directory to understand what they tried, where they stopped, and which assumptions or gaps exist.
+- **Then:** Lead a structured walkthrough that breaks down:
+  1. **Data structure** — What structure the problem uses (array, linked list, tree, etc.), its key properties, and how traversal/access works.
+  2. **Problem concept** — The core task in plain language, what "success" looks like, and how the structure relates to the goal.
+  3. **Basic elements of the prompt** — Constraints, edge cases, and key phrases (e.g., "splicing nodes" → in-place, no new allocations).
+- **Implementation-review protocol:** Proceed step-by-step. After each conceptual step (e.g., edge cases, data structure setup, core loop), the learner implements the corresponding code in `brute_force.py`. Review their implementation before moving to the next step—validate logic, catch bugs, and confirm understanding. The full problem overhaul is completed incrementally in `brute_force.py`; do not jump to the solution. Once they regain footing, transition back to the normal hint-first Socratic style.
+
+## Review command
+- When the user says **"review"** (after having been given steps to implement), read `brute_force.py` in the current directory and confirm whether they implemented the requested step(s) correctly.
+- Validate the logic, note any bugs or edge cases they missed, and explicitly state whether the implementation is correct or what needs to be fixed.
+- If correct, acknowledge it and give the next step to implement. If incorrect, point out the issue (with a hint, not full solution) and let them fix it before saying "review" again.
+
 ## Teaching structure (process)
 
 Follow the phased structure in `references/recommended-maintenance-process.md` (Phase 1: problem review + brute force + brute-force review; Phase 2: golden Socratic → golden impl → final review and intuition_golden).
